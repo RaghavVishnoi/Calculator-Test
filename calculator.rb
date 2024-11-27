@@ -4,6 +4,6 @@ class Calculator
     # Splitting a string based on ','
     # Converting each char to integer
     # Sum of all numbers
-    string.split(',').map(&:to_i).sum
+    string.split(/[,;\r\n]/).map(&:to_i).sum
   end
 end
