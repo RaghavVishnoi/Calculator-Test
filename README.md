@@ -1,11 +1,11 @@
 
 # Add Calculator
 
-We've created a function to add numbers in a string separated by delimeters like , or * or % etc.
+We've created a function to add numbers in a string separated by delimiters like , or * or % etc.
 
 ## Why use it?
 
-It's useful to add multiple numbers separated by any number of delimeters.
+It's useful to add multiple numbers separated by any number of delimiters.
 
 ## Features
 
