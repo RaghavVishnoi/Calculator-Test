@@ -9,9 +9,13 @@ class Calculator
       number_string = splitted_string.last
       delimiter_string = splitted_string.first
       delimiter = delimiter_string.split('//').last
-      number_string.split(/[#{delimiter}]/).map(&:to_i).sum
+      number_list = number_string.split(/[#{delimiter}]/).map(&:to_i)
     else
-      string.split(/[,;\r\n]/).map(&:to_i).sum
+      number_list = string.split(/[,;\r\n]/).map(&:to_i)
     end
+    negative_numbers = number_list.select { |number| number.negative? }
+    return "negative numbers not allowed #{negative_numbers.join(',')}" unless negative_numbers.empty?
+
+    number_list.sum
   end
 end

@@ -35,4 +35,13 @@ RSpec.describe 'AddNumbers' do
     expect(Calculator.new.add(input_two)).to eq(6)
     expect(Calculator.new.add(input_three)).to eq(7)
   end
+
+  it 'raise error when passing a negative number' do
+    input_one = '10,23,-11'
+    input_two = "3\n4\n-1"
+    input_three = "//#\n-1#-2#4"
+    expect(Calculator.new.add(input_one)).to eq('negative numbers not allowed -11')
+    expect(Calculator.new.add(input_two)).to eq('negative numbers not allowed -1')
+    expect(Calculator.new.add(input_three)).to eq('negative numbers not allowed -1,-2')
+  end
 end
